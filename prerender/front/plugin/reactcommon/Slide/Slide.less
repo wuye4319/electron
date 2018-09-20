@@ -1,0 +1,19 @@
+/* slide default */
+.slide{ height: 500px; width: 1920px; position: relative; left: 50%;
+  .left,.right{ border: 1px solid red; display: inline-block; width: 50px; height: 50px; line-height: 50px; position: absolute; top: 230px;}
+  .left{ left: 20%; z-index: 5;}
+  .right{ right: 20%;}
+  .slideitem{ position: absolute; transition: left .5s ease-in;
+    >img,>div{ display: inline-block;}
+    .tempdom{ position: absolute;}
+  }
+  .slidebox{ left: -50%; position: relative; height: 100%;}
+  .buttbox{
+    .turn{ display: none;}
+    .index{ position: absolute; bottom:46px; left: 47.52%; height: 19px;
+      span{ display: inline-block; width: 12px; height: 12px; border-radius: 12px; background: #fff; text-indent: 999px; overflow: hidden; margin: 0 10px;
+        &.curr{ background:#0088cc;}
+      }
+    }
+  }
+}

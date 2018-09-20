@@ -1,0 +1,152 @@
+/**
+ * Author: Code Lai （赖传峰）
+ * Email: codelai@staritgp.com
+ * Desc: 提示组件的样式
+ */
+@import '../../less/class.less';
+
+@arrow-size: 6px;
+@arrow-color: #fff;
+@arrow-bg-size: 7px;
+@arrow-bg-color: #ddd;
+.orion-prompt {
+    a {
+        .link-1();
+    }
+    * {
+        box-sizing: border-box;
+    }
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    z-index: -10;
+    opacity: 0;
+    -webkit-transition: opacity .2s ease-in-out .1s, z-index 0s ease-in-out .3s;
+    transition: opacity .2s ease-in-out .1s, z-index 0s ease-in-out .3s;
+    &.no-arrow {
+        .orion-prompt-inner:after {
+            display: none;
+        }
+    }
+}
+
+.orion-prompt-show {
+    z-index: 99;
+    opacity: 1;
+    -webkit-transition: opacity .2s ease-in-out, z-index .2s ease-in-out;
+    transition: opacity .2s ease-in-out, z-index .2s ease-in-out;
+}
+
+.orion-prompt-content {
+    position: relative;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.arrow(@arrow-size) {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: @arrow-size solid transparent;
+}
+
+.orion-prompt-inner {
+    .fz12();
+    border-radius: 3px;
+    padding: 5px 10px;
+    text-align: left;
+    max-width: 250px;
+    min-width: 20px;
+    &:after {
+        .inblock();
+        content: '';
+        z-index: 0;
+        .arrow(@arrow-bg-size);
+    }
+    &.no-arrow:after {
+        display: none;
+    }
+    li + li {
+        margin-top: 5px;
+    }
+}
+
+.orion-prompt-arrow {
+    z-index: 10;
+    .arrow(@arrow-size);
+}
+
+.orion-prompt-placement-top {
+    padding-bottom: @arrow-bg-size;
+    ._arrow(@bottom,@marginLeft,@color) {
+        bottom: @bottom;
+        left: 50%;
+        margin-left: @marginLeft;
+        border-top-color: @color;
+        border-bottom: none;
+    }
+    .orion-prompt-arrow {
+        ._arrow(-@arrow-size, -@arrow-size, @arrow-color);
+    }
+    .orion-prompt-inner:after {
+        ._arrow(-(@arrow-bg-size)-1, -@arrow-bg-size, @arrow-bg-color);
+    }
+}
+
+.orion-prompt-placement-right {
+    padding-left: @arrow-bg-size;
+    ._arrow(@left,@marginTop,@color) {
+        left: @left;
+        top: 50%;
+        margin-top: @marginTop;
+        border-right-color: @color;
+        border-left: none;
+    }
+    .orion-prompt-arrow {
+        ._arrow(-@arrow-size, -@arrow-size, @arrow-color);
+    }
+    .orion-prompt-inner:after {
+        ._arrow(-(@arrow-bg-size)-1, -@arrow-bg-size, @arrow-bg-color);
+    }
+}
+
+.orion-prompt-placement-bottom {
+    &.no-arrow {
+        padding-top: 3px;
+    }
+    padding-top: @arrow-bg-size;
+    ._arrow(@top,@marginLeft,@color) {
+        top: @top;
+        left: 50%;
+        margin-left: @marginLeft;
+        border-bottom-color: @color;
+        border-top: none;
+    }
+    .orion-prompt-arrow {
+        ._arrow(-@arrow-size, -@arrow-size, @arrow-color);
+    }
+    .orion-prompt-inner:after {
+        ._arrow(-(@arrow-bg-size)-1, -@arrow-bg-size, @arrow-bg-color);
+    }
+}
+
+.orion-prompt-placement-left {
+    padding-right: @arrow-bg-size;
+    ._arrow(@right,@marginTop,@color) {
+        right: @right;
+        top: 50%;
+        margin-top: @marginTop;
+        border-left-color: @color;
+        border-right: none;
+    }
+    .orion-prompt-arrow {
+        ._arrow(-@arrow-size, -@arrow-size, @arrow-color);
+    }
+    .orion-prompt-inner:after {
+        ._arrow(-(@arrow-bg-size)-1, -@arrow-bg-size, @arrow-bg-color);
+    }
+}

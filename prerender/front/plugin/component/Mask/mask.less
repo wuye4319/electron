@@ -1,0 +1,23 @@
+/**
+ * Author: Code Lai （赖传峰）
+ * Email: codelai@staritgp.com
+ * Date: 2017/1/16
+ */
+@import "../../less/class.less";
+
+.orion-mask {
+    .ab-all();
+    z-index: -1;
+    position: fixed;
+    opacity: 0;
+    background: #fff;
+    -webkit-transition: opacity .2s ease-in-out, z-index .2s ease-in-out .2s;
+    transition: opacity .2s ease-in-out, z-index .2s ease-in-out .2s;
+}
+
+.orion-mask-show {
+    opacity: .5;
+    z-index: 99;
+    -webkit-transition: opacity .2s ease-in-out, z-index .2s ease-in-out;
+    transition: opacity .2s ease-in-out, z-index .2s ease-in-out;
+}

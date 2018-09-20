@@ -1,0 +1,93 @@
+/**
+ * Author: Code Lai （赖传峰）
+ * Email: codelai@staritgp.com
+ * Desc: Button 组件样式
+ */
+@import '../../less/class.less';
+
+.btn-type(
+    @bg,
+    @hover:saturate(lighten(@bg,10%),20%),
+    @active:saturate(darken(@bg,10%),20%),
+    @disabled:#ccc
+) {
+    background: @bg;
+    &:hover, &.hover {
+        background: @hover;
+    }
+    &:active, &.active {
+        background: @active;
+
+    }
+    &:disabled, &.disabled {
+        background: #ccc;
+        cursor: not-allowed;
+    }
+}
+
+.btn-size(@font-size,@height) {
+    font-size: @font-size;
+    height: @height;
+    line-height: @height;
+}
+
+a.orion-btn {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff !important;
+}
+
+button.orion-btn {
+    line-height: 1 !important;
+    color: #fff;
+}
+
+.orion-btn {
+    .user-select-none();
+    ._transition(background);
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    padding: 0 30px;
+    text-align: center;
+    background-image: none;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+
+.orion-btn-primary {
+    .btn-type(@color-primary, #0c72d5, #0559aa);
+}
+
+.orion-btn-success {
+    .btn-type(@color-success);
+}
+
+.orion-btn-warning {
+    .btn-type(@color-warning, #f9aa2e, #e87d15);
+}
+
+.orion-btn-danger {
+    .btn-type(@color-danger);
+}
+
+.orion-btn-xs {
+    .btn-size(12px, 25px);
+}
+
+.orion-btn-sm {
+    .btn-size(14px, 30px);
+}
+
+.orion-btn-md {
+    .btn-size(16px, 40px);
+}
+
+.orion-btn-lg {
+    .btn-size(18px, 50px);
+}

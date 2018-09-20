@@ -1,0 +1,28 @@
+{
+  "default": {
+    "construct": [
+      {
+        "title": "wssso标题",
+        "keyword": "wssso关键字",
+        "description": "wssso描述"
+      },
+      {
+        "title": "superbuy购物小助手",
+        "keyword": "wssso keyword",
+        "description": "wssso description"
+      }
+    ],
+    "default": [
+      {
+        "title": "Superbuy标题",
+        "keyword": "superbuy关键字",
+        "description": "superbuy描述"
+      },
+      {
+        "title": "Superbuy title",
+        "keyword": "superbuy keyword",
+        "description": "superbuy description"
+      }
+    ]
+  }
+}

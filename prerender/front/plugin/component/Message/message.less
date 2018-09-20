@@ -1,0 +1,82 @@
+/**
+ * Author: Code Lai （赖传峰）
+ * Email: codelai@staritgp.com
+ * Date: 2017/1/11
+ * Desc: 轻提示组件
+ */
+@import '../../less/class.less';
+
+.type() {
+    color: #fff !important;
+    padding-left: 54px;
+    &:after {
+        position: absolute;
+        content: '';
+        left: 24px;
+        top: 12px;
+        width: 20px;
+        height: 20px;
+        // img/orion/icon_message.png
+        background: url(data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAABQCAMAAAAunqVFAAAA5FBMVEUAAAD/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////GDRAyH7/9vcSaLv/rLb/UGVKjMv0jivz/Pf3qV30kTD8/v34/fpq1Jph0pRWz4zt+vPk9+3c9ej/0NX838L83sGZ4rpy16BQzYhJy4T/7e/g9urW8+P/3uLR8uDM8NzK8Nuu6Mik5cGN3rJ/2qh62aVu1Z1a0I//Wm7/OlL/HTnJ9U+DAAAAIHRSTlMABuCsVfrkW1LbifKL2KZc6JQL9MrDfV5BODMbF56bgXONghgAAAG0SURBVDjLxZPXcsIwEEXlbnAMBNLrjVJJCJBCTe/t//8nlmW4WDDDUybnRcMZNKvd6xUplluyvSguuZYYExaQUQgzZRUBUtR/1o5WORcGbnLZBzlv9gHfEgFAerIFoCwckAcp7wA4wgZwcaEvf8qeOm3hARgMr5DwKlsNdXoiAvAmB7fAk5RX0DIG0OjL9mW9LV+QYutC5x+y/S6bDS2d7En1ppTDS2jKo8fXW/I5c741brP+yDYTFpBjQY9ucdItWtNDdjl6K3Bsz7OdwKKjnJMRyzOjnNsfZ0R19HONUGdEt7d3rdos590hgEA4hssyMh1i4U05RIk0HWrCNhwzotOFylMOQfr4Lzpm9D3pEOqB3NyDFGeObvaQGUccMY5/2KPjY7YZwJDcI8KMCPfIuK72KOPggDKmNDKi5B5Rco8omRGr/9UezSesVELTbUVAtGXIbSTs5N0GUjZychnodIBlGt3q2Zlqka6qMjk5AWBXx3IFI4mVkdusUdY2M1kCJUrarQPICinWU7mkf3S7+lxSbhUGq8lzRhmdnkJTqYpdmBJFUcEU0awPrCDWfNP5a2IWvzrejsYuCOMYAAAAAElFTkSuQmCC) no-repeat;
+    }
+}
+
+.orion-message {
+    position: fixed;
+    z-index: 100;
+    top: -50px;
+    left: 50%;
+    height: 44px;
+    padding: 0 24px;
+    line-height: 44px;
+    background: fade(#fff, 80%);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    .translate(-50%, 0);
+    ._transition(top);
+}
+
+.orion-message-default {
+    .fc3();
+}
+
+.orion-message-info {
+    .type();
+    background: fade(@color-primary, 80%);
+    &:after {
+        background-position: 0 -40px;
+    }
+}
+
+.orion-message-success {
+    .type();
+    background: fade(@color-success, 80%);
+    &:after {
+        background-position: 0 0;
+    }
+}
+
+.orion-message-warning {
+    .type();
+    background: fade(@color-warning, 80%);
+    &:after {
+        background-position: 0 -60px;
+    }
+}
+
+.orion-message-error {
+    .type();
+    background: fade(@color-danger, 80%);
+    &:after {
+        background-position: 0 -20px;
+    }
+}
+
+.orion-message-loading {
+    .type();
+    .fc3();
+    color: #333 !important;
+    &:after {
+        background: url("@{webpath_cn}orion/loading_normal_20.gif");
+    }
+}

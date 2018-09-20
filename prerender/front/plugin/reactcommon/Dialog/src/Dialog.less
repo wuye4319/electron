@@ -1,0 +1,152 @@
+/** 对话框 **/
+@import '../../../../plugin/less/class.less';
+@theme1 : #1268bb;
+@theme2 : #f7941d;
+@theme3 : #ff1733;
+
+.Dialog-mask{
+  width: 100%; height: 100%; background: center no-repeat rgba(0,0,0,.8); position: fixed; top: 0; left: 0; z-index: 1000;
+}
+.Dialog-size-lg{
+  width: 960px !important;
+}
+.Dialog-size-md{
+  width: 750px !important;
+}
+
+
+.Dialog{
+  width: 750px; border-radius: 9px; border: 5px solid rgba(0,0,0,.2); position: absolute; top: 50%; left: 50%; overflow: hidden;
+  -ms-transform: translate(-50%,-50%); -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);
+
+  header{
+    position: relative; width: 100%; height: 45px; background: @theme1; /*border-radius: 5px 5px 0 0;*/
+
+    h3{
+      color: #fff; line-height: 45px; text-indent: 20px; font-size: 16px;
+    }
+
+    .Dialog-close{
+      position: absolute; width: 20px; height: 20px; top: 12px; right: 20px; background: url('@{webpath_cn}/Dialog/icon_close.png') center no-repeat; cursor: pointer; border: 0; outline: 0;
+      &:disabled{
+        cursor: default;
+      }
+    }
+  }
+
+  footer{
+    background: #fff; text-align: center; padding-bottom: 30px; /*border-radius: 0 0 5px 5px;*/ margin-top: -1px; position: relative;
+
+    button,.button,.Dialog-button{
+      display: inline-block; font-size: 18px; min-width: 128px; height: 48px; line-height: 48px; text-align: center; color: #fff; background-color: @theme1; border: 1px solid @theme1; border-radius: 3px; text-decoration: none; cursor: pointer; margin: 0 10px; padding: 0 15px; outline: 0; box-sizing: border-box;
+      &:hover{
+        background-color: #0c72d5; border-color: #0c72d5;
+      }
+      &:active{
+        background-color: #0559aa; border-color: #0559aa;
+      }
+      &:disabled{
+        background-color: #ccc !important; border-color: #ccc !important; cursor: default;
+      }
+    }
+
+    .Dialog-cancel{
+      background-color: transparent !important; color: @theme1 !important;
+      &:hover{
+        color: #0c72d5 !important; border-color: #0c72d5;
+      }
+      &:active{
+        color: #0559aa !important; border-color: #0559aa;
+      }
+      &:disabled{
+        color: #ccc !important; border-color: #ccc !important; background-color: transparent !important;
+      }
+    }
+  }
+
+  .Dialog-icon-box{
+    line-height: 24px; padding-left: 95px; min-height: 64px; color: #333; background: url('@{webpath_cn}Dialog/icon_theme01.png') 0 0 no-repeat;
+  }
+
+  &.disabled footer:after{
+    display: block; position: absolute; content: ""; width: 100%; height: 100%; background: transparent; top: 0; left: 0;
+  }
+
+  &.Dialog-theme2{
+    header{
+      background: @theme2;
+    }
+
+    footer{
+      button,.button,.Dialog-button{
+        background: @theme2; border-color: @theme2;
+        &:hover{
+          background-color: #f9aa2e; border-color: #f9aa2e;
+        }
+        &:active{
+          background-color: #e87d15; border-color: #e87d15;
+        }
+      }
+      .Dialog-cancel{
+        color: @theme2 !important;
+        &:hover{
+          color: #f9aa2e !important; border-color: #f9aa2e;
+        }
+        &:active{
+          color: #e87d15 !important; border-color: #e87d15;
+        }
+      }
+    }
+    .Dialog-icon-box{
+      background-image: url('@{webpath_cn}Dialog/icon_theme02.png');
+    }
+  }
+
+  &.Dialog-theme3{
+    header{
+      background: @theme3;
+    }
+
+    footer{
+      button,.button,.Dialog-button{
+        background: @theme3; border-color: @theme3;
+        &:hover{
+          background-color: #ef5467; border-color: #ef5467;
+        }
+        &:active{
+          background-color: #eb263e; border-color: #eb263e;
+        }
+      }
+      .Dialog-cancel{
+        color: @theme3 !important;
+        &:hover{
+          color: #f96476 !important; border-color: #f96476;
+        }
+        &:active{
+          color: #eb263e !important; border-color: #eb263e;
+        }
+      }
+    }
+    .Dialog-icon-box{
+      background-image: url('@{webpath_cn}Dialog/icon_theme03.png');
+    }
+  }
+
+  &.Dialog-size-sm{
+    width: 360px;
+    header{
+      h3{
+        font-size: 14px;
+      }
+    }
+    footer{
+      button,.button,.Dialog-button{
+        min-width: 85px; height: 28px; line-height: 28px; font-size: 12px;
+      }
+    }
+  }
+}
+
+.Dialog-body{
+  padding: 30px; background: #fff; /*border-radius: 5px;*/
+}

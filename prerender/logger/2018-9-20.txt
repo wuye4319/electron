@@ -1,0 +1,2 @@
+GET /warmachine/ - 4ms
+GET /favicon.ico - 0ms

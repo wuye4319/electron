@@ -1,0 +1,139 @@
+.Paging{
+  width: 100%; height: 40px; text-align: center; position: relative;
+
+  & > *{
+    display: inline-block; height: 40px; line-height: 40px;
+  }
+
+  button{
+    height: 38px; min-width: 38px; border: 1px solid #eee; background-color: #fff; text-align: center; font-size: 14px; line-height: 38px; cursor: pointer; box-sizing: content-box; position: relative; color: #666;
+
+    &:focus{
+      outline: 0;
+    }
+
+    &:hover{
+      border-color: #ccc; z-index: 2;
+    }
+
+    &:disabled{
+      color: #ccc; cursor: default; border-color: #eee; z-index: 1;
+    }
+
+    &.active{
+      color: #fff; background: #1268bb; border-color: #1268bb; z-index: 3; cursor: default;
+    }
+  }
+
+  .button-edge{
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAACYCAYAAAB59sAmAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyppVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCOTU0Qzc0NDcxQTUxMUU2QUY4NDhBMUUyRDEzQUJBMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCOTU0Qzc0NTcxQTUxMUU2QUY4NDhBMUUyRDEzQUJBMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkEzRTY2MEY1NzE5QzExRTZBRjg0OEExRTJEMTNBQkEwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkEzRTY2MEY2NzE5QzExRTZBRjg0OEExRTJEMTNBQkEwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+yCbG6AAAAhNJREFUeNrs28FKAlEUxnGt9i10Yb1ABkHG7AMlCVrUW8xDzVvUokVJbdpKCUL5AtpC6QnCzoFrXDQJnDNw1P+FgwtFftw7946ejylPp9OS97FTWoMBEiRIkCA3ALmX9wuyLHuRl32pS6nhX59J09TFTJ5IPUkdel3uG6lXqaMAPfCInEi1pd4C9NkaarXcCr2IoKYzarm7Y2jdEmp9BMVLP4PWPJ6T4wDtBeg9d5wVR1WqI3Uq9S515Q0ZAz+kWlKfnpAKfIyATQugJbISgA3LGbREVsISx8CRt41zF4CDIoBWyG+pfrgGR0UcQWXaLCBBggQJEiRIkCBBggQJcmHkTh+63e6/6UOSJC5mkvSB9MHj7iZ9sB6kD1aD9MECSPqQF0j6QPrA3weQIEGCBAkSJEiQIEGCXFOkxbMPy97SBuqD1FeapuceZ1KB2jvXVGLX43IrUDu82jvXju+1N+QMWA9A7aFPPCFrc8C2BdASWQvXoAJ7ATj2dATFM9gLSzy2vIYskJouHBcF3Ko7jqYL2uHVXrm2pKsekdobbwVoI0ArHpd7NAftWEItr8kZdGANtd44Cm1GUJOlL2J3xzN6JnXr9QgaBmjf4stIH0CCBAkSJEiQIEGCBAkS5OKwePZh2Vu/6UOSJKQPqwJJH/IM0gfLGSR92Pg7DumD5XKTPpA+lEgf+GUOEiRIkCC3EvkjwACuYrolVaTuVgAAAABJRU5ErkJggg==') #fff no-repeat;
+  }
+
+  .button-prev{
+    padding: 0 20px 0 36px; background-position:left -76px;
+
+    &:disabled{
+      background-position: left -114px;
+    }
+  }
+
+  .button-next{
+    padding: 0 35px 0 20px; background-position: right 0; margin-right: 10px;
+
+    &:disabled{
+      background-position: right -38px;
+    }
+  }
+
+  .button-group{
+    margin-left: 11px; margin-right: 9px;
+    li{
+      display: inline-block; margin-left: -1px; min-width: 34px;
+
+      button{
+        display: inline-block; min-width: 30px; padding: 0 4px;
+      }
+
+      span{
+        color: #999; vertical-align: 4px; line-height: 20px;
+      }
+    }
+  }
+
+  span{
+    color: #999; margin: 0 6px;
+  }
+
+  input{
+    height: 30px; line-height: 30px; width: 50px; padding: 0 5px; text-align: center; border: 1px solid #eee; border-radius: 3px; vertical-align: middle; background: #fff; color: #666;
+
+    &:focus{
+      outline: 0; border-color: #ccc;
+    }
+  }
+
+  .button-confirm{
+    height: 30px; line-height: 30px; padding: 0 15px; border: 1px solid #eee; border-radius: 3px; vertical-align: middle; margin-left: 8px;
+
+    &:focus{
+      outline: 0; border-color: #ccc;
+    }
+  }
+
+  &.paging-loading{
+    opacity: .5;
+
+    .paging-mask{
+      display: block;
+    }
+  }
+
+  .paging-mask{
+    width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 4; background: transparent; display: none;
+  }
+
+  &.Paging-sm{
+    height: 30px;
+
+    &>*{
+      height: 30px; line-height: 30px; vertical-align: middle;
+    }
+
+    span{
+      font-size: 12px;
+    }
+
+    button{
+      height: 28px; line-height: 28px; font-size: 12px;
+    }
+
+    input{
+      width: 40px; height: 28px; line-height: 28px;
+    }
+
+    .button-confirm{
+      padding: 0 10px; font-size: 12px;
+    }
+
+    .button-group{
+
+      li{
+        button{
+          min-width: 20px;
+        }
+      }
+    }
+
+    .button-edge{
+      background-image: none;
+    }
+
+    .button-prev{
+      padding: 0 16px;
+    }
+
+    .button-next{
+      padding: 0 16px;
+    }
+  }
+}

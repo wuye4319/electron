@@ -1,0 +1,176 @@
+/**
+ * Author: Code Lai （赖传峰）
+ * Email: codelai@staritgp.com
+ */
+@import '../../less/class.less';
+
+.bg(@path,@rest...) {
+    background: url('@{webpath_cn}orion/modal/@{path}') no-repeat @rest;
+}
+
+.orion-modal-alert-icon(@x) {
+    .orion-modal-alert-icon {
+        background-position: @x 0;
+    }
+}
+
+.orion-modal-header(@color) {
+    .orion-modal-header {
+        background: @color;
+    }
+}
+
+.orion-modal-alert {
+    * {
+        box-sizing: border-box;
+    }
+    position: relative;
+    width: 100%;
+    min-height: 64px;
+}
+
+.orion-modal-alert-primary {
+    .orion-modal-alert-icon(0);
+}
+
+.orion-modal-alert-success {
+    .orion-modal-alert-icon(-70px);
+}
+
+.orion-modal-alert-warning {
+    .orion-modal-alert-icon(-140px);
+}
+
+.orion-modal-alert-danger {
+    .orion-modal-alert-icon(-210px);
+}
+
+.orion-modal-alert-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+    width: 64px;
+    height: 64px;
+    .bg('modal_alert_icon.png');
+}
+
+.orion-modal-alert-message {
+    .fz14();
+    .fc6();
+    display: inline-block;
+    vertical-align: middle;
+    &.middle {
+        position: absolute;
+        top: 50%;
+        .translate(0, -50%);
+    }
+}
+
+.orion-modal {
+    &.orion-modal-show {
+        top: 50%;
+        opacity: 1;
+        .translate(-50%, -50%);
+    }
+    a {
+        .link-1();
+    }
+    max-width: 1200px;
+    max-height: 670px;
+    position: fixed;
+    z-index: 100;
+    border-radius: 3px;
+    left: 50%;
+    top: 0;
+    opacity: 0;
+    .translate(-50%, -100%);
+    -webkit-transition: opacity .2s linear, top .2s linear;
+    transition: opacity .2s linear, top .2s linear;
+}
+
+.orion-modal-primary {
+    .orion-modal-header(@color-primary);
+}
+
+.orion-modal-success {
+    .orion-modal-header(@color-success);
+}
+
+.orion-modal-warning {
+    .orion-modal-header(@color-warning);
+}
+
+.orion-modal-danger {
+    .orion-modal-header(@color-danger);
+}
+
+.orion-modal-bg {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    border-radius: 3px;
+    opacity: .5;
+}
+
+.orion-modal-content {
+    position: relative;
+    z-index: 1;
+    margin: 5px;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.orion-modal-header {
+    position: relative;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 20px;
+    .fcf();
+    .fz16();
+}
+
+.orion-modal-close {
+    cursor: pointer;
+    border: 0;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -10px;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+    outline: 0;
+    // img/orion/modal_close.png
+    background: url(data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAG1BMVEUAAAD////////////////////////////////rTT7CAAAACXRSTlMA6TtCPkbVzI3YZW4mAAAAXElEQVQI1z3PwQ2AQAgEQBLOxPdJAZbgdYAl+LIA7b8G11tgH2SZF8gjkVvOg23p0jbWaxcwEaNZItiJk4lkIKMGjAxg1kLtqxeqJf5bIFfO4OEJankkkVe+9dAHadQJ+dq65gQAAAAASUVORK5CYII=) transparent no-repeat;
+}
+
+.orion-modal-body {
+    padding: 30px;
+}
+
+.orion-modal-footer {
+    position: relative;
+    padding: 0 30px 30px;
+    text-align: center;
+}
+
+.orion-mask {
+    &.orion-mask-show {
+        opacity: .5;
+        z-index: 99;
+    }
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    opacity: 0;
+    z-index: -1;
+    transition-delay: .2s;
+    ._transition(all);
+}
