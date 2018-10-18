@@ -99,7 +99,8 @@ var Content = function (_React$Component) {
     _this.state = {
       // machinelist: [{'p1': '120.79.34.227'}, {'p2': '120.79.160.242'}, {'p4': '119.23.228.230'}],
       browser: 0,
-      img: 'loading.gif'
+      img: 'loading.gif',
+      loginacc: false
     };
     return _this;
   }
@@ -119,21 +120,44 @@ var Content = function (_React$Component) {
       });
     }
   }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.getlogin();
+    }
+  }, {
+    key: 'getlogin',
+    value: function getlogin() {
+      var _this3 = this;
+
+      var apiurl = 'http://localhost:8080/apidata/machine/';
+      fetch(apiurl).then(function (res) {
+        return res.text();
+      }).then(function (res) {
+        res = JSON.parse(res);
+        var tempacc = res.browser[0].loginacc;
+        if (tempacc) {
+          _this3.state.loginacc = tempacc;
+        } else {
+          var self = _this3;
+          setTimeout(function () {
+            self.getlogin();
+          }, 1000);
+        }
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var rand = Math.ceil(Math.random() * 1000000000);
       return React.createElement(
         'div',
         null,
-        React.createElement('img', { src: '/source/img/warmachine/codeimg/' + this.state.img + '?' + rand }),
+        React.createElement('img', { src: '/logo.png' }),
+        React.createElement('img', { src: this.state.loginacc ? '/logo.png' : '/source/img/warmachine/codeimg/' + this.state.img + '?' + rand }),
         React.createElement(
           'p',
           null,
-          React.createElement(
-            'a',
-            { href: 'http://localhost:8080/warmachine/loginstatus/' + this.state.browser },
-            'click to check login status'
-          )
+          this.state.loginacc ? '登录成功：' + this.state.loginacc + '，欢迎使用' : '请扫描上方二维码登录淘宝账号！'
         )
       );
     }

@@ -9,7 +9,7 @@ class Content extends React.Component {
       winbox: [
         {
           view: 'view0',
-          url: 'https://www.tmall.com/',
+          url: 'http://localhost/login/logincode/',
           title: ''
         }
       ],

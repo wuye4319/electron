@@ -1,6 +1,6 @@
 import { app, BrowserWindow, Tray } from 'electron'
 
-require('keeper-seo')
+require('keeper-static')
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
