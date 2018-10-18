@@ -1,11 +1,6 @@
 import './login.less'
 import { tmall } from './website/ali'
 
-// const imgSrc = window.supervar.imgsrc_cn
-// const apiUrl = window.supervar.apiURL
-// const domain = '//www.' + window.supervar.domain
-// const hrefUrl = domain + '/cn/page/'
-
 /* your logic code */
 class Content extends React.Component {
   constructor () {
@@ -14,7 +9,7 @@ class Content extends React.Component {
       winbox: [
         {
           view: 'view0',
-          url: 'https://www.tmall.com/', // http://localhost:8080/logincode/self/0/
+          url: 'https://www.tmall.com/',
           title: ''
         }
       ],

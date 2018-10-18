@@ -1,0 +1,43 @@
+[34mProgram start at : [39m2018-10-18-15-27
+self browser0[32m is start![39m
+GET /login/logincode/ - 2ms
+GET /favicon.ico - 0ms
+GET /login/logincode/ - 0ms
+GET /login/logincode/ - 2ms
+GET /plugin/dev/load.js - 0ms
+GET /source/js/login/logincode/logincode.js?50d5ea2ec22c31be8f1993e1b899835f - 0ms
+GET /favicon.ico - 0ms
+GET /login/logincode/ - 1ms
+GET /plugin/dev/load.js - 0ms
+GET /source/js/login/logincode/logincode.js?50d5ea2ec22c31be8f1993e1b899835f - 1ms
+GET /plugin/dev/react.development.js - 0ms
+GET /plugin/dev/react-dom.development.js - 1ms
+GET /plugin/base/util.min.js?570d8171aee52970f2ed - 0ms
+GET /plugin/base/util.min.js?570d8171aee52970f2ed - 0ms
+GET /plugin/base/util.min.js?570d8171aee52970f2ed - 0ms
+GET /logincode/self/0/ - 1ms
+GET /logincode/self/0/ - 0ms
+GET /login/logincode/ - 1ms
+GET /plugin/dev/load.js - 1ms
+GET /source/js/login/logincode/logincode.js?50d5ea2ec22c31be8f1993e1b899835f - 1ms
+GET /login/logincode/ - 0ms
+GET /source/js/login/logincode/logincode.js?3cfb35b47bb988e8071a54b1783e0493 - 0ms
+GET /plugin/dev/load.js - 1ms
+GET /plugin/dev/react.development.js - 0ms
+GET /plugin/dev/react-dom.development.js - 2ms
+GET /logincode/self/0/ - 1ms
+GET /logincode/self/0/ - 0ms
+[34mProgram start at : [39m2018-10-18-15-44
+self browser0[32m is start![39m
+GET /login/logincode/ - 2ms
+GET /source/js/login/logincode/logincode.js?8a0789a963fda287aed0bfb501ee7def - 1ms
+GET /plugin/dev/load.js - 1ms
+GET /plugin/dev/react.development.js - 0ms
+GET /plugin/dev/react-dom.development.js - 1ms
+GET /source/img/warmachine/codeimg/loading.gif?815887187 - 1ms
+[31mGet login code img is working![39m
+GET /logincode/self/0 - 2730ms
+[35mAuto-login timeout! Page closed![39m
+[34mProgram start at : [39m2018-10-18-15-46
+[34mProgram start at : [39m2018-10-18-15-51
+self browser0[32m is start![39m
