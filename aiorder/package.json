@@ -1,9 +1,9 @@
 {
-  "name": "prerender",
-  "productName": "prerender",
+  "name": "aiorder",
+  "productName": "aiorder",
   "version": "1.0.0",
   "description": "My Electron application description",
-  "main": "static/index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -32,7 +32,7 @@
         "packageManager": "npm"
       },
       "electronWinstallerConfig": {
-        "name": "prerender"
+        "name": "aiorder"
       },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
@@ -42,42 +42,30 @@
       },
       "windowsStoreConfig": {
         "packageName": "",
-        "name": "prerender"
+        "name": "aiorder"
       }
     }
   },
   "dependencies": {
-    "antd": "^2.12.2",
-    "babel-loader": "^7.1.1",
-    "babel-plugin-import": "^1.2.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "css-loader": "^0.28.4",
     "electron-compile": "^6.4.3",
-    "electron-prebuilt": "^1.4.13",
     "electron-squirrel-startup": "^1.0.0",
+    "keeper-core": "^1.0.61",
     "keeper-proxy": "0.0.7",
-    "keeper-seo": "^1.2.85",
     "koa": "^2.3.0",
     "koa-cors": "0.0.16",
     "koa-router": "^7.2.1",
-    "less-loader": "^4.0.4",
-    "mime": "^2.3.1",
-    "puppeteer": "^1.5.0",
-    "react-router": "^3.0.0",
-    "style-loader": "^0.18.2",
-    "url-loader": "^0.5.9"
+    "mime": "^2.3.1"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "electron": "^2.0.8",
     "electron-forge": "^5.2.2",
-    "electron-prebuilt-compile": "2.0.7",
+    "electron-prebuilt-compile": "3.0.2",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.10.0"
+    "eslint-plugin-react": "^7.11.1"
   }
 }

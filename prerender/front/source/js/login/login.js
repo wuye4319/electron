@@ -1,5 +1,5 @@
-import './home.less'
-import { tmall } from './website/tmall'
+import './login.less'
+import { tmall } from './website/ali'
 
 // const imgSrc = window.supervar.imgsrc_cn
 // const apiUrl = window.supervar.apiURL
@@ -14,7 +14,7 @@ class Content extends React.Component {
       winbox: [
         {
           view: 'view0',
-          url: 'https://www.tmall.com/',
+          url: 'https://www.tmall.com/', // http://localhost:8080/logincode/self/0/
           title: ''
         }
       ],
@@ -55,11 +55,11 @@ class Content extends React.Component {
   }
 
   loadstop () {
-    document.title = 'superbuy购物小助手bate版'
+    document.title = 'superbuy自动下单'
   }
 
   loadstart () {
-    document.title = 'superbuy购物小助手bate版 - loading...'
+    document.title = 'superbuy自动下单 - loading...'
   }
 
   alertOnlineStatus () {

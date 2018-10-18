@@ -1,0 +1,2 @@
+{"Cache":"2018-10-17-19-58/1539777522343.html","Loadingtime":"0.139 s","date":"2018-10-17 19:58:42","url":"https://h5api.m.taobao.com/h5/mtop.taobao.detail.getdetail/6.0/?data=itemNumId%22%3A%22558925001118%2C"},
+{"apidata":"success","date":"2018-10-17 19:58:43","url":"https://item.taobao.com/item.htm?id=558925001118"}

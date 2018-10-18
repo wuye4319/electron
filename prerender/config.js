@@ -4,7 +4,7 @@
  */
 const config = {
   version: '1.2.2',
-  myModule: 'home', // myModule:1级目录
+  myModule: 'login', // myModule:1级目录
   childModule: '', // childModule:2级目录
   currTheme: '',
   basepath: '',

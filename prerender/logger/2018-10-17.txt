@@ -1,0 +1,87 @@
+GET /login/ - 6ms
+GET /plugin/dev/load.js - 0ms
+GET /source/js/login/login.js?9d5961c9a7a78bc12fb06c18804ed197 - 12ms
+GET /login/ - 5ms
+GET /source/js/login/login.min.js?4990f991e8de6347235a47f5d0053bbf - 16ms
+GET /plugin/base/load.js - 14ms
+GET /plugin/base/react.production.min.js - 13ms
+GET /plugin/base/react-dom.production.min.js - 20ms
+[34mProgram start at : [39m2018-10-17-17-18
+self browser0[32m is start![39m
+GET /login/ - 1ms
+GET /source/js/login/login.min.js?4990f991e8de6347235a47f5d0053bbf - 0ms
+GET /plugin/base/load.js - 0ms
+GET /plugin/base/react.production.min.js - 0ms
+GET /plugin/base/react-dom.production.min.js - 1ms
+undefined2018-10-17-17-29
+undefined2018-10-17-17-30
+undefined2018-10-17-17-31
+[34mProgram start at : [39m2018-10-17-17-32
+self browser0[32m is start![39m
+undefined2018-10-17-17-33
+GET /login/ - 1ms
+[34mProgram start at : [39m2018-10-17-17-33
+self browser0[32m is start![39m
+GET /login/ - 1ms
+GET /favicon.ico - 1ms
+undefined2018-10-17-17-35
+GET /login/ - 1ms
+undefined2018-10-17-17-35
+GET /login/ - 2ms
+GET /source/js/login/login.min.js?4990f991e8de6347235a47f5d0053bbf - 0ms
+GET /plugin/base/load.js - 0ms
+GET /plugin/base/react.production.min.js - 0ms
+GET /plugin/base/react-dom.production.min.js - 1ms
+undefined2018-10-17-17-46
+undefined2018-10-17-17-47
+undefined2018-10-17-17-53
+GET /login/ - 1ms
+GET /source/js/login/login.min.js?4990f991e8de6347235a47f5d0053bbf - 0ms
+GET /plugin/base/load.js - 0ms
+GET /plugin/base/react.production.min.js - 1ms
+GET /plugin/base/react-dom.production.min.js - 0ms
+undefined2018-10-17-17-54
+GET /login/ - 2ms
+GET /source/js/login/login.min.js?4990f991e8de6347235a47f5d0053bbf - 1ms
+GET /plugin/base/load.js - 1ms
+GET /plugin/base/react.production.min.js - 0ms
+GET /plugin/base/react-dom.production.min.js - 0ms
+undefined2018-10-17-17-56
+GET /login/ - 2ms
+GET /source/js/login/login.min.js?4990f991e8de6347235a47f5d0053bbf - 1ms
+GET /plugin/base/load.js - 0ms
+GET /plugin/base/react.production.min.js - 1ms
+GET /plugin/base/react-dom.production.min.js - 0ms
+undefined2018-10-17-18-3
+GET /login/ - 2ms
+GET /plugin/base/load.js - 1ms
+GET /source/js/login/login.min.js?4990f991e8de6347235a47f5d0053bbf - 0ms
+GET /plugin/base/react.production.min.js - 0ms
+GET /plugin/base/react-dom.production.min.js - 1ms
+GET /login/ - 5ms
+GET /plugin/base/load.js - 18ms
+GET /source/js/login/login.min.js?4990f991e8de6347235a47f5d0053bbf - 15ms
+GET /plugin/base/react.production.min.js - 13ms
+GET /plugin/base/react-dom.production.min.js - 43ms
+undefined2018-10-17-18-10
+GET /login/ - 1ms
+GET /source/js/login/login.min.js?4990f991e8de6347235a47f5d0053bbf - 0ms
+GET /plugin/base/load.js - 0ms
+GET /plugin/base/react.production.min.js - 0ms
+GET /plugin/base/react-dom.production.min.js - 0ms
+[34mProgram start at : [39m2018-10-17-19-58
+self browser0[32m is start![39m
+[31mprocess : [39m[31m0[39m
+https://item.taobao.com/item.htm?id=558925001118
+[32mread cache time : [39m[31m1[39m[32m ms[39m
+2018-10-17 19:58:42
+[32mWeb page opens normally [39m1
+[32mLoading time : [39m[31m0.139 s[39m
+[34mCreate cache file![39m
+[]
+GET /taobao/ - 350ms
+GET /favicon.ico - 1ms
+[31mGet login code img is working![39m
+GET /logincode/self/0/ - 2752ms
+GET /source/img/warmachine/codeimg/codeimgself0.png?946601419 - 0ms
+[35mAuto-login timeout! Page closed![39m

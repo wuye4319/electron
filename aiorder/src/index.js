@@ -1,6 +1,6 @@
-import { app, BrowserWindow, Tray } from 'electron'
+import { app, BrowserWindow } from 'electron'
 
-require('keeper-seo')
+require('keeper-proxy')
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -14,9 +14,8 @@ let mainWindow
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 1400,
-    height: 980,
-    icon: '/logo.png'
+    width: 1000,
+    height: 650
   })
 
   mainWindow.setMenu(null)
