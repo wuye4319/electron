@@ -1,0 +1,51 @@
+Program start at : 2018-10-19-11-16
+self browser0 is start!
+process : 0
+
+read cache time : 1 ms
+Cont page error! Or page timeout!
+[]
+GET /order/ - 96ms
+GET /favicon.ico - 1ms
+process : 0
+
+read cache time : 1 ms
+Cont page error! Or page timeout!
+[]
+POST /order/ - 80ms
+process : 0
+
+read cache time : 0 ms
+Cont page error! Or page timeout!
+[]
+POST /order/ - 83ms
+Program start at : 2018-10-19-13-2
+self browser0 is start!
+Program start at : 2018-10-19-13-2
+self browser0 is start!
+GET /login/ - 7ms
+GET /source/js/login/login.js?651619d5b1f7774b5741c43ba9e28921 - 10ms
+GET /plugin/dev/load.js - 15ms
+GET /plugin/dev/react.development.js - 11ms
+GET /plugin/dev/react-dom.development.js - 37ms
+GET /login/logincode/ - 5ms
+GET /plugin/dev/load.js - 0ms
+GET /source/js/login/logincode/logincode.js?5ab770302390471935df7e3a155a28f8 - 12ms
+GET /plugin/dev/react.development.js - 0ms
+GET /plugin/dev/react-dom.development.js - 0ms
+GET /logo.png - 1ms
+GET /source/img/warmachine/codeimg/loading.gif?218752333 - 0ms
+GET /apidata/machine/ - 0ms
+GET /apidata/machine/ - 0ms
+Get login code img is working!
+GET /apidata/machine/ - 1ms
+GET /logincode/self/0 - 2735ms
+GET /source/img/warmachine/codeimg/codeimgself0.png?236458305 - 0ms
+GET /apidata/machine/ - 1ms
+GET /apidata/machine/ - 1ms
+GET /apidata/machine/ - 1ms
+GET /apidata/machine/ - 0ms
+GET /apidata/machine/ - 0ms
+GET /apidata/machine/ - 0ms
+GET /apidata/machine/ - 0ms
+GET /apidata/machine/ - 1ms
