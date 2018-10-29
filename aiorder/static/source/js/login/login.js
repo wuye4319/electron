@@ -89,11 +89,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// const imgSrc = window.supervar.imgsrc_cn
-// const apiUrl = window.supervar.apiURL
-// const domain = '//www.' + window.supervar.domain
-// const hrefUrl = domain + '/cn/page/'
-
 /* your logic code */
 var Content = function (_React$Component) {
   _inherits(Content, _React$Component);
@@ -106,7 +101,7 @@ var Content = function (_React$Component) {
     _this.state = {
       winbox: [{
         view: 'view0',
-        url: 'https://www.tmall.com/',
+        url: 'http://localhost/login/logincode/',
         title: ''
       }],
       currwin: 0
@@ -310,7 +305,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "/*icon*/\n/* public path */\n/* page width */\n/* css3.0 */\n/* 阴影 */\n/* 文字阴影 */\n/* 旋转 */\n/* 平移 */\n/* 缩放 */\n/* 扭曲 */\n/* transform */\n/* 渐变 */\n/* 三角形 */\n/* your business less */\n", ""]);
+exports.push([module.i, "@charset \"utf-8\";\n/* Base Application Styles */\n/* css reset */\nbody,\ndiv,\naddress,\niframe,\nul,\nol,\ndl,\ndt,\ndd,\nli,\ndl,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\npre,\ntable,\ncaption,\ntd,\nform,\nlegend,\nfieldset,\ninput,\nbutton,\nselect,\ntextarea,\np {\n  margin: 0;\n  padding: 0;\n  font-style: normal;\n  font: 12px/1.5 'PingFang SC', microsoft yahei, 'STHeitiSC-Light', simsun, sans-serif;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\nfieldset,\niframe,\nimg,\nabbr,\nacronym {\n  border: 0;\n}\naddress,\ncaption,\ncite,\ncode,\ndfn,\nem,\nvar {\n  font-style: normal;\n  font-weight: normal;\n}\nem,\ni {\n  font-style: normal;\n}\nselect,\ninput,\nimg {\n  vertical-align: middle;\n}\ninput::-ms-clear,\ninput::-ms-reveal {\n  display: none;\n}\nol,\nul,\ndl,\nli,\ndt {\n  list-style-type: none;\n}\nq:before,\nq:after {\n  content: ' ';\n}\na {\n  text-decoration: none;\n  cursor: pointer;\n}\na:hover,\na:active {\n  color: #1268bb;\n  text-decoration: underline;\n  cursor: pointer;\n}\na:link,\na:visited {\n  color: #5ba0ff;\n}\n/* oo css */\n.fl {\n  float: left;\n}\n.fr {\n  float: right;\n}\n.li-el {\n  word-break: keep-all;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  overflow: hidden;\n}\n.cb {\n  clear: both;\n}\n.clearfix:after {\n  content: '.';\n  display: block;\n  height: 0;\n  clear: both;\n  visibility: hidden;\n}\n.clearfix {\n  display: block;\n}\n.hidden {\n  visibility: hidden;\n}\n.none {\n  display: none !important;\n}\n/*icon*/\n/* public path */\n/* page width */\n/* css3.0 */\n/* 阴影 */\n/* 文字阴影 */\n/* 旋转 */\n/* 平移 */\n/* 缩放 */\n/* 扭曲 */\n/* transform */\n/* 渐变 */\n/* 三角形 */\n/* your business less */\n.nav {\n  border-top: 1px solid #ddd;\n  border-bottom: 1px solid #ddd;\n  line-height: 30px;\n}\n.nav button {\n  margin-left: 5px;\n}\n.nav button:nth-child(4) {\n  padding: 0 3px;\n}\n.label {\n  display: inline-block;\n  margin-left: 5px;\n}\n.label ul li {\n  display: inline-block;\n  border: 1px solid #333;\n  border-bottom: none;\n  padding: 1px 5px;\n  margin-left: 5px;\n}\n", ""]);
 
 // exports
 

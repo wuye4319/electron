@@ -1,0 +1,18 @@
+{
+  "thirdPartyOrderNo": "237727149554906504",
+  "orderNo": "DO1705887795",
+  "items": [
+    {
+      "orderPrice": 100,
+      "orderFreightPrice": 0,
+      "itemBarcode": "DI17051464891"
+    },
+    {
+      "orderPrice": 100,
+      "orderFreightPrice": 0,
+      "itemBarcode": "DI17051464891"
+    }
+  ],
+  "orderStatus": 1
+  // 1成功，2失败，3数据核对异常
+}

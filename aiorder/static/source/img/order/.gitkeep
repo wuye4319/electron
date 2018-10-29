@@ -1,0 +1,9 @@
+func (d, code) {
+    let i, k = [], v = []
+    for (i in d) {
+      k.push(i)
+      v.push(d[i])
+    }
+    // apply(this,v)
+    return (new Function(k, code)).apply(d, v)
+  }

@@ -97,10 +97,10 @@ var Content = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).call(this));
 
     _this.state = {
-      // machinelist: [{'p1': '120.79.34.227'}, {'p2': '120.79.160.242'}, {'p4': '119.23.228.230'}],
-      browser: 0,
-      img: 'loading.gif',
-      loginacc: false
+      proname: '测试商品',
+      proimg: '/logo_big.png',
+      surplus: 0,
+      order: 0
     };
     return _this;
   }
@@ -111,59 +111,135 @@ var Content = function (_React$Component) {
       var _this2 = this;
 
       document.getElementById('container').style.opacity = 1;
+      setTimeout(function () {
+        _this2.shopping();
+      }, 3000);
+    }
+  }, {
+    key: 'shopping',
+    value: function shopping() {
+      this.setState({ order: 0 });
+      // 请求商品池
+      this.getpro();
+    }
+  }, {
+    key: 'updatestate',
+    value: function updatestate(data, count) {
+      var _this3 = this;
 
-      var apiurl = 'http://localhost:8080/logincode/self/' + this.state.browser;
-      fetch(apiurl).then(function (res) {
+      console.log(data, count);
+      if (count) {
+        setTimeout(function () {
+          _this3.shopping();
+        }, 5000);
+      }
+
+      // 更新订单状态
+      var updateorder = 'http://www.test.com/daigou-admin/admin/system/virtualBuypool/updateStatus.html';
+      fetch(updateorder, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }).then(function (res) {
         return res.text();
       }).then(function (res) {
         console.log(res);
-        _this2.setState({ img: res });
       });
     }
   }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.getlogin();
+    key: 'myorder',
+    value: function myorder(data) {
+      var _this4 = this;
+
+      // 自动购买插件
+      var buyorder = 'http://localhost:8080/order/';
+      fetch(buyorder, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: data
+      }).then(function (res) {
+        // price less 需要补价，失败
+        // data anomaly 数据核对失败，已购买
+        return res.json();
+      }).then(function (res) {
+        var mydata = res;
+        var newdata = {};
+        newdata.orderNo = mydata.orderNo;
+        newdata.itemBarcode = mydata.itemBarcode;
+        if (mydata.state) {
+          newdata.orderStatus = 3;
+          newdata.orderPrice = parseFloat(mydata.price);
+          newdata.orderFreightPrice = parseFloat(mydata.postage.replace(/￥/, ''));
+          newdata.thirdPartyOrderNo = mydata.order;
+          _this4.setState({ order: 3 });
+        } else if (mydata.cont === 'data anomaly') {
+          newdata.orderStatus = 5;
+          _this4.setState({ order: 5 });
+        } else {
+          newdata.orderStatus = 4;
+          _this4.setState({ order: 4 });
+        }
+        _this4.updatestate(newdata, mydata.poolCount);
+      });
     }
   }, {
-    key: 'getlogin',
-    value: function getlogin() {
-      var _this3 = this;
+    key: 'getpro',
+    value: function getpro() {
+      var _this5 = this;
 
-      var apiurl = 'http://localhost:8080/apidata/machine/';
-      fetch(apiurl).then(function (res) {
+      var getpro = 'http://www.test.com/daigou-admin/admin/system/virtualBuypool/list.html?purchaserId=1';
+      fetch(getpro).then(function (res) {
         return res.text();
       }).then(function (res) {
-        res = JSON.parse(res);
-        var tempacc = res.browser[0].loginacc;
-        if (tempacc) {
-          _this3.state.loginacc = tempacc;
-          _this3.setState({ loginacc: _this3.state.loginacc });
-        } else {
-          var self = _this3;
-          setTimeout(function () {
-            self.getlogin();
-          }, 1000);
-        }
+        var mydata = JSON.parse(res);
+        _this5.setState({
+          proname: mydata.items[0].goodsName,
+          proimg: mydata.items[0].goodsPic,
+          surplus: mydata.poolCount
+        });
+        _this5.myorder(res);
       });
     }
   }, {
     key: 'render',
     value: function render() {
-      var rand = Math.ceil(Math.random() * 1000000000);
       return React.createElement(
         'div',
-        { className: 'order' },
-        React.createElement('img', { src: this.state.loginacc ? '/logo.png' : '/source/img/warmachine/codeimg/' + this.state.img + '?' + rand }),
+        null,
         React.createElement(
-          'p',
-          null,
-          this.state.loginacc ? '登录成功：' + this.state.loginacc + '，欢迎使用' : '请扫描上方二维码登录淘宝账号！'
-        ),
-        this.state.loginacc || React.createElement(
-          'a',
-          { href: '/order/' },
-          '\u5F00\u59CB\u81EA\u52A8\u8D2D\u4E70'
+          'div',
+          { className: 'product' },
+          React.createElement(
+            'p',
+            null,
+            '\u6B63\u5728\u8D2D\u4E70\u7684\u5546\u54C1 : '
+          ),
+          React.createElement('img', { src: this.state.proimg, width: 300, height: 300, alt: '' }),
+          React.createElement(
+            'p',
+            null,
+            this.state.proname
+          ),
+          React.createElement(
+            'p',
+            null,
+            '\u91C7\u8D2D\u6C60\u5269\u4F59\u8BA2\u5355\u91CF \uFF1A',
+            this.state.surplus
+          ),
+          React.createElement(
+            'p',
+            { className: 'status' },
+            this.state.surplus > 0 || '采购池为空，系统进入间歇性休眠状态！'
+          ),
+          React.createElement(
+            'p',
+            null,
+            this.state.order ? this.state.order === 3 ? '购买成功' : '购买失败' : ''
+          )
         )
       );
     }
@@ -171,9 +247,6 @@ var Content = function (_React$Component) {
 
   return Content;
 }(React.Component);
-
-// const Wrap = window.supervar.Wrap
-
 
 ReactDOM.render(React.createElement(Content, null), document.getElementById('container'));
 
@@ -198,8 +271,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/less-loader/dist/index.js!./logincode.less", function() {
-			var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/less-loader/dist/index.js!./logincode.less");
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/less-loader/dist/index.js!./order.less", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/less-loader/dist/index.js!./order.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -217,7 +290,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "@charset \"utf-8\";\n/*icon*/\n/* public path */\n/* page width */\n/* css3.0 */\n/* 阴影 */\n/* 文字阴影 */\n/* 旋转 */\n/* 平移 */\n/* 缩放 */\n/* 扭曲 */\n/* transform */\n/* 渐变 */\n/* 三角形 */\n/* Base Application Styles */\n/* css reset */\nbody,\ndiv,\naddress,\niframe,\nul,\nol,\ndl,\ndt,\ndd,\nli,\ndl,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\npre,\ntable,\ncaption,\ntd,\nform,\nlegend,\nfieldset,\ninput,\nbutton,\nselect,\ntextarea,\np {\n  margin: 0;\n  padding: 0;\n  font-style: normal;\n  font: 12px/1.5 'PingFang SC', microsoft yahei, 'STHeitiSC-Light', simsun, sans-serif;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\nfieldset,\niframe,\nimg,\nabbr,\nacronym {\n  border: 0;\n}\naddress,\ncaption,\ncite,\ncode,\ndfn,\nem,\nvar {\n  font-style: normal;\n  font-weight: normal;\n}\nem,\ni {\n  font-style: normal;\n}\nselect,\ninput,\nimg {\n  vertical-align: middle;\n}\ninput::-ms-clear,\ninput::-ms-reveal {\n  display: none;\n}\nol,\nul,\ndl,\nli,\ndt {\n  list-style-type: none;\n}\nq:before,\nq:after {\n  content: ' ';\n}\na {\n  text-decoration: none;\n  cursor: pointer;\n}\na:hover,\na:active {\n  color: #1268bb;\n  text-decoration: underline;\n  cursor: pointer;\n}\na:link,\na:visited {\n  color: #5ba0ff;\n}\n/* oo css */\n.fl {\n  float: left;\n}\n.fr {\n  float: right;\n}\n.li-el {\n  word-break: keep-all;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  overflow: hidden;\n}\n.cb {\n  clear: both;\n}\n.clearfix:after {\n  content: '.';\n  display: block;\n  height: 0;\n  clear: both;\n  visibility: hidden;\n}\n.clearfix {\n  display: block;\n}\n.hidden {\n  visibility: hidden;\n}\n.none {\n  display: none !important;\n}\n/* your business less */\n.order p {\n  font-size: 20px;\n  width: 600px;\n  text-align: center;\n  color: blue;\n}\n.order a {\n  text-align: center;\n  display: inline-block;\n  width: 600px;\n  font-size: 20px;\n  margin-top: 20px;\n  color: red;\n}\n", ""]);
+exports.push([module.i, "@charset \"utf-8\";\n/*icon*/\n/* public path */\n/* page width */\n/* css3.0 */\n/* 阴影 */\n/* 文字阴影 */\n/* 旋转 */\n/* 平移 */\n/* 缩放 */\n/* 扭曲 */\n/* transform */\n/* 渐变 */\n/* 三角形 */\n/* Base Application Styles */\n/* css reset */\nbody,\ndiv,\naddress,\niframe,\nul,\nol,\ndl,\ndt,\ndd,\nli,\ndl,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\npre,\ntable,\ncaption,\ntd,\nform,\nlegend,\nfieldset,\ninput,\nbutton,\nselect,\ntextarea,\np {\n  margin: 0;\n  padding: 0;\n  font-style: normal;\n  font: 12px/1.5 'PingFang SC', microsoft yahei, 'STHeitiSC-Light', simsun, sans-serif;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\nfieldset,\niframe,\nimg,\nabbr,\nacronym {\n  border: 0;\n}\naddress,\ncaption,\ncite,\ncode,\ndfn,\nem,\nvar {\n  font-style: normal;\n  font-weight: normal;\n}\nem,\ni {\n  font-style: normal;\n}\nselect,\ninput,\nimg {\n  vertical-align: middle;\n}\ninput::-ms-clear,\ninput::-ms-reveal {\n  display: none;\n}\nol,\nul,\ndl,\nli,\ndt {\n  list-style-type: none;\n}\nq:before,\nq:after {\n  content: ' ';\n}\na {\n  text-decoration: none;\n  cursor: pointer;\n}\na:hover,\na:active {\n  color: #1268bb;\n  text-decoration: underline;\n  cursor: pointer;\n}\na:link,\na:visited {\n  color: #5ba0ff;\n}\n/* oo css */\n.fl {\n  float: left;\n}\n.fr {\n  float: right;\n}\n.li-el {\n  word-break: keep-all;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  overflow: hidden;\n}\n.cb {\n  clear: both;\n}\n.clearfix:after {\n  content: '.';\n  display: block;\n  height: 0;\n  clear: both;\n  visibility: hidden;\n}\n.clearfix {\n  display: block;\n}\n.hidden {\n  visibility: hidden;\n}\n.none {\n  display: none !important;\n}\n/* your business less */\n.product {\n  padding: 10px 20px;\n}\n.product .status {\n  color: red;\n}\n.product p {\n  font-size: 20px;\n  height: 35px;\n  line-height: 35px;\n}\n.product img {\n  margin: 10px 0;\n}\n", ""]);
 
 // exports
 

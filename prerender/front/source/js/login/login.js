@@ -1,5 +1,4 @@
 import './login.less'
-import { tmall } from './website/ali'
 
 /* your logic code */
 class Content extends React.Component {
@@ -37,13 +36,13 @@ class Content extends React.Component {
         return state
       })
     })
-    webview.addEventListener('did-finish-load', function () {
-      if (webview.getURL().indexOf('detail.tmall.com/item.htm') !== -1) {
-        console.log(tmall.init)
-        let str = tmall.init + ';init()'
-        webview.executeJavaScript(str, false, function () {})
-      }
-    })
+    // webview.addEventListener('did-finish-load', function () {
+    //   if (webview.getURL().indexOf('detail.tmall.com/item.htm') !== -1) {
+    //     console.log(tmall.init)
+    //     let str = tmall.init + ';init()'
+    //     webview.executeJavaScript(str, false, function () {})
+    //   }
+    // })
     webview.addEventListener('new-window', function (e) {
       webview.loadURL(e.url)
     })
@@ -61,32 +60,30 @@ class Content extends React.Component {
     console.log(navigator.onLine ? 'online' : 'offline')
   }
 
-  goback () {
+  opration (key) {
     let currid = 'view' + this.state.currwin
     let webview = document.getElementById(currid)
-    webview.goBack()
-  }
-
-  goforward () {
-    let currid = 'view' + this.state.currwin
-    let webview = document.getElementById(currid)
-    webview.goForward()
-  }
-
-  reload () {
-    let currid = 'view' + this.state.currwin
-    let webview = document.getElementById(currid)
-    webview.reload()
+    switch (key) {
+      case 1:
+        webview.goBack()
+        break
+      case 2:
+        webview.goForward()
+        break
+      case 3:
+        webview.reload()
+        break
+    }
   }
 
   render () {
     return (
       <div>
         <div className='nav'>
-          <button onClick={e => {this.goback()}}>后退</button>
-          <button onClick={e => {this.goforward()}}>前进</button>
-          <button onClick={e => {this.reload()}}>刷新</button>
-          <button>+</button>
+          <button onClick={e => {this.opration(1)}}>后退</button>
+          <button onClick={e => {this.opration(2)}}>前进</button>
+          <button onClick={e => {this.opration(3)}}>刷新</button>
+          {/*<button>+</button>*/}
           <div className="label">
             <ul>
               {

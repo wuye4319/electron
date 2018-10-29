@@ -19,6 +19,7 @@ class Content extends React.Component {
     fetch(apiurl).then((res) => {
       return res.text()
     }).then((res) => {
+      console.log(res)
       this.setState({img: res})
     })
   }
@@ -36,6 +37,7 @@ class Content extends React.Component {
       let tempacc = res.browser[0].loginacc
       if (tempacc) {
         this.state.loginacc = tempacc
+        this.setState({loginacc: this.state.loginacc})
       } else {
         let self = this
         setTimeout(function () {
@@ -48,9 +50,10 @@ class Content extends React.Component {
   render () {
     let rand = Math.ceil(Math.random() * 1000000000)
     return (
-      <div>
+      <div className='order'>
         <img src={this.state.loginacc ? '/logo.png' : '/source/img/warmachine/codeimg/' + this.state.img + '?' + rand}/>
         <p>{this.state.loginacc ? '登录成功：' + this.state.loginacc + '，欢迎使用' : '请扫描上方二维码登录淘宝账号！'}</p>
+        {!this.state.loginacc || <a href='/order/'>开始自动购买</a>}
       </div>
     )
   }

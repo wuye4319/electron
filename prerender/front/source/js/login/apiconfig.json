@@ -1,0 +1,36 @@
+{
+  "orderNo": "DO1705887795",
+  "purchaserId": "32",
+  "purchaserName": "amanda",
+  "createdDate": 1510224159,
+  // 池子总数
+  // 接口状态
+  "items": [
+    {
+      "itemBarcode": "DI17051464891",
+      "goodsName": "2件装】男士短袖t恤纯棉韩版修身圆领体恤夏季学生半袖衣服潮男装",
+      // 标题必须是中文
+      // 商品主图
+      "goodsPrifex": "TMALL",
+      "goodsLink": "https://s.click.taobao.com/SUmAsZw",
+      "unitPrice": 0.1,
+      "count": 1,
+      "originalLink": "detail.tmall.com/item.htm?id=536744143174",
+      "linkType": 2,
+      "goodsPropList": [
+        {
+          "propId": 20509,
+          "propName": "尺码",
+          "valueId": 28314,
+          "valueName": "M"
+        },
+        {
+          "propId": 1627207,
+          "propName": "颜色",
+          "valueId": 297812114,
+          "valueName": "JK01藏青"
+        }
+      ]
+    }
+  ]
+}
