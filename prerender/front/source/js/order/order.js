@@ -16,7 +16,7 @@ class Content extends React.Component {
     document.getElementById('container').style.opacity = 1
     setTimeout(() => {
       this.shopping()
-    }, 3000)
+    }, 900)
   }
 
   shopping () {

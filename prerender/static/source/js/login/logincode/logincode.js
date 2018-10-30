@@ -100,7 +100,8 @@ var Content = function (_React$Component) {
       // machinelist: [{'p1': '120.79.34.227'}, {'p2': '120.79.160.242'}, {'p4': '119.23.228.230'}],
       browser: 0,
       img: 'loading.gif',
-      loginacc: false
+      loginacc: false,
+      accid: 1
     };
     return _this;
   }
@@ -148,8 +149,15 @@ var Content = function (_React$Component) {
       });
     }
   }, {
+    key: 'getaccid',
+    value: function getaccid(e) {
+      console.log(e);
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this4 = this;
+
       var rand = Math.ceil(Math.random() * 1000000000);
       return React.createElement(
         'div',
@@ -160,7 +168,15 @@ var Content = function (_React$Component) {
           null,
           this.state.loginacc ? '登录成功：' + this.state.loginacc + '，欢迎使用' : '请扫描上方二维码登录淘宝账号！'
         ),
-        this.state.loginacc || React.createElement(
+        React.createElement(
+          'p',
+          null,
+          '\u8BF7\u586B\u5199\u4F60\u7684\u91C7\u8D2D\u8D26\u53F7ID\uFF1A',
+          React.createElement('input', { type: 'text', value: 1, onChange: function onChange(e) {
+              _this4.getaccid(e);
+            } })
+        ),
+        !this.state.loginacc || React.createElement(
           'a',
           { href: '/order/' },
           '\u5F00\u59CB\u81EA\u52A8\u8D2D\u4E70'

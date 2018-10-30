@@ -8,7 +8,8 @@ class Content extends React.Component {
       // machinelist: [{'p1': '120.79.34.227'}, {'p2': '120.79.160.242'}, {'p4': '119.23.228.230'}],
       browser: 0,
       img: 'loading.gif',
-      loginacc: false
+      loginacc: false,
+      accid: 1
     }
   }
 
@@ -47,13 +48,19 @@ class Content extends React.Component {
     })
   }
 
+  getaccid (e) {
+    this.setState({accid: e.target.value})
+    console.log(e.target.value)
+  }
+
   render () {
     let rand = Math.ceil(Math.random() * 1000000000)
     return (
       <div className='order'>
         <img src={this.state.loginacc ? '/logo.png' : '/source/img/warmachine/codeimg/' + this.state.img + '?' + rand}/>
         <p>{this.state.loginacc ? '登录成功：' + this.state.loginacc + '，欢迎使用' : '请扫描上方二维码登录淘宝账号！'}</p>
-        {!this.state.loginacc || <a href='/order/'>开始自动购买</a>}
+        <p>请填写你的采购账号ID：<input type="text" defaultValue={1} onChange={(e) => {this.getaccid(e)}}/></p>
+        {!this.state.loginacc || <a href={'/order/?' + this.state.accid}>开始自动购买</a>}
       </div>
     )
   }
